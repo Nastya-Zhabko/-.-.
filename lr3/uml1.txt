@@ -1,0 +1,13 @@
+@startuml
+actor "Менеджер" as owner
+boundary "Система контроля поступающих требований" as app
+entity "БД:Заказ" as data
+actor "Художник" as trainee
+owner-> app : Обратная связь
+owner-> app : Требования заказчика
+app-> data : Запись требований
+-> app : Сроки
+data-> app : Оформление заказа
+app-> owner : Заказ
+app-> trainee : Заказ
+@enduml
